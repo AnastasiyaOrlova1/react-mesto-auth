@@ -65,7 +65,6 @@ function App() {
         , [history])
 
 
-    //LIKE CARD
     function handleCardLike(card) {
 
         const isLiked = card.likes.some(i => i._id === currentUser._id);
@@ -78,7 +77,6 @@ function App() {
             });
     }
 
-    //DELETE CARD
     function handleCardDelete(deleteCard) {
         api.removeCard(deleteCard)
             .then(() => {
@@ -92,13 +90,13 @@ function App() {
 
     useEffect(() => {
         const closeByEscape = (e) => {
-          if (e.key === 'Escape') {
-            closeAllPopups();
-          }
+            if (e.key === 'Escape') {
+                closeAllPopups();
+            }
         }
-  
+
         document.addEventListener('keydown', closeByEscape)
-        
+
         return () => document.removeEventListener('keydown', closeByEscape)
     }, [])
 
@@ -152,7 +150,6 @@ function App() {
             });
     }
 
-    //ADD CARD
     function handleAddPlaceSubmit(newCard) {
         api.postCard(newCard)
             .then((newCard) => {
@@ -164,7 +161,6 @@ function App() {
             });
     }
 
-    //REGISTRATION
     function onRegister(email, password) {
         auth.register(email, password)
             .then(res => {
@@ -177,7 +173,6 @@ function App() {
 
     }
 
-    //SIGN IN
     function onLogin({ password, email }) {
         auth.authorize({ password, email })
             .then(data => {
@@ -190,8 +185,6 @@ function App() {
             })
             .catch(err => setTooltipStatus('fail'));
     }
-
-    //SIGN OUT
 
     function onSignOut() {
         localStorage.removeItem('jwt');
