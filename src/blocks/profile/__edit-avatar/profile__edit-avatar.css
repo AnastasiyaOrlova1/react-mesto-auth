@@ -13,5 +13,5 @@
 }
 
 .profile__edit-avatar:hover {
-    background: url(../../../images/avataEditIcon.png) center no-repeat rgba(0, 0, 0, .8);
+    background: url(../../../images/avatarEditIcon.svg) center no-repeat rgba(0, 0, 0, .8);
 }
